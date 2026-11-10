@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIQuiz.SettingsPage"
+             >
+	<VerticalStackLayout Margin="10">
+		<Label Text="App Settings" FontSize="28" HorizontalOptions="Center" 
+					 FontAttributes="Bold"/>
+
+		<Label Text="Select Language:" FontSize="18" Margin="0,30,0,0"/>
+		<Picker x:Name="pcLanguage" SelectedIndexChanged="pcLanguage_SelectedIndexChanged">
+			<Picker.Items>
+				<x:String>English</x:String>
+				<x:String>Hungarian</x:String>
+			</Picker.Items>
+		</Picker>
+
+		<Label Text="Number of Questions:" FontSize="18" Margin="0,20,0,10"/>
+		<Slider x:Name="slQuestionCount" Minimum="1" Maximum="100" 
+						ValueChanged="slQuestionCount_ValueChanged"/>
+		<Label x:Name="llQuestionCount" x:DataType="Slider"
+			Text="{Binding Source={x:Reference slQuestionCount}, Path=Value, StringFormat='Questions: {0:F0}'}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+	</VerticalStackLayout>
+</ContentPage>

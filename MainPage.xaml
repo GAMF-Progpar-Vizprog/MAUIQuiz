@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIQuiz.MainPage" Title="C# Quiz"
+						 NavigatedTo="MainPage_NavigatedTo">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem 
+         Clicked="tbiSettings_Clicked"
+         IconImageSource="{FontImage Glyph='&#x2699;', Color=Black}"/>
+	</ContentPage.ToolbarItems>
+	<Grid RowDefinitions="*,Auto" ColumnDefinitions="Auto,*,Auto" Margin="5">
+		<ScrollView Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0">
+			<VerticalStackLayout x:Name="slQuestions"/>
+		</ScrollView>
+		<Button Text="Start" Clicked="btStart_Clicked" Grid.Row="1" Grid.Column="0" x:Name="btStart"/>
+		<Button Text="Submit" Clicked="btSubmit_Clicked" Grid.Row="1" Grid.Column="2" x:Name="btSubmit"/>
+	</Grid>
+</ContentPage>
